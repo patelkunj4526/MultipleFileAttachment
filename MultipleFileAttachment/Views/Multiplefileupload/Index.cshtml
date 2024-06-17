@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form id="uploadForm" method="post" enctype="multipart/form-data" action="/Multiplefileupload/Index">
+    <input type="file" name="files[]" id="fileInput" multiple>
+    <ul id="fileList"></ul>
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    document.getElementById('fileInput').addEventListener('change', handleFileSelect);
+
+    function handleFileSelect(event) {
+        const fileList = document.getElementById('fileList');
+        fileList.innerHTML = ''; // Clear previous entries
+
+        const files = event.target.files;
+        for (let i = 0; i < files.length; i++) {
+            const listItem = document.createElement('li');
+            listItem.textContent = files[i].name;
+            fileList.appendChild(listItem);
+        }
+    }
+
+</script>

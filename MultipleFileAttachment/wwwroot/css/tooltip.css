@@ -1,0 +1,23 @@
+﻿.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+    .tooltip:after {
+        content: "foo bar";
+        position: absolute;
+        top: -30px;
+        right: 0;
+        left: 0;
+        display: none;
+        text-align: center;
+        background-color: #000;
+        color: #fff;
+        border-radius: 4px;
+        padding: 2px;
+    }
+
+    .tooltip:hover:after {
+        display: block;
+    }
